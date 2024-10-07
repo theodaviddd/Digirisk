@@ -97,6 +97,13 @@ function digiriskelement_prepare_head(DigiriskElement $object)
             }
         }
 
+        //add digiAI tab
+        $head[$h][0] = dol_buildpath('/digiriskdolibarr/view/digiriskelement/digiriskelement_digiai.php', 1) . '?id=' . $object->id;
+        $head[$h][1] = $conf->browser->layout != 'phone' ? '<i class="fas fa-magic pictofixedwidth"></i>' . $langs->trans('DigiAI') : '<i class="fas fa-magic"></i>';
+        $head[$h][2] = 'elementDigiAI';
+        $h++;
+
+
         $head[$h][0] = dol_buildpath('/digiriskdolibarr/view/digiriskelement/digiriskelement_register.php', 1) . '?id=' . $object->id;
         $head[$h][1] = $conf->browser->layout != 'phone' ? '<i class="fa fa-ticket-alt pictofixedwidth"></i>' . $langs->trans('Registers') : '<i class="fas fa-ticket-alt"></i>';
         $head[$h][2] = 'elementRegister';

@@ -145,21 +145,23 @@ if ($object->id > 0) {
 
     print '<div class="fichecenter digiailist wpeo-wrap">';
 
-    print '<form method="POST" enctype="multipart/form-data" action="' . $_SERVER["PHP_SELF"] . '?id='. $id .'" name="upload_image_form" id="upload_image_form">' . "\n";
+    // Partie avec le formulaire stylisé pour téléversement avec picto
+    print '<div class="digiAI-upload-container-full">';
+
+    print '<form method="POST" enctype="multipart/form-data" action="' . $_SERVER["PHP_SELF"] . '?id='. $id .'" name="upload_image_form" id="upload_image_form" class="digiAI-form">' . "\n";
     print '<input type="hidden" name="token" value="' . newToken() . '">';
     print '<input type="hidden" name="action" value="upload_image">';
     print '<input type="hidden" name="id" value="' . $id . '">';
 
-    print '<h2>';
-    print $langs->trans('WelcomeToDigiAI');
-    print '</h2>';
-
-    print '<div class="digiAI-upload">';
-    print '<label for="image_file">' . $langs->trans('UploadAnImage') . ':</label>';
-    print '<input type="file" name="image_file" id="image_file" accept="image/*">';
-    print '<button type="submit" class="digiAI-upload-button">' . $langs->trans('Upload') . '</button>';
+// Grande zone de téléversement
+    print '<div class="digiAI-dropzone" id="dropzone" onclick="document.getElementById(\'image_file\').click();">';
+    print '<i class="fas fa-cloud-upload-alt"></i>';
+    print '<p>' . $langs->trans('UploadAnImage') . '</p>';
+    print '<input type="file" name="image_file" id="image_file" accept="image/*" class="digiAI-input-file">';
     print '</div>';
+
     print '</form>';
+    print '</div>';
 
     print '<div class="wpeo-modal" id="digiai_modal">';
     print '<div class="modal-container">';
@@ -174,6 +176,7 @@ if ($object->id > 0) {
                         <th>Cotation</th>
                         <th>Description du Risque</th>
                         <th>Actions de Prévention</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -27,7 +27,7 @@ window.digiriskdolibarr.digiai.init = function() {
  * @return {void}
  */
 window.digiriskdolibarr.digiai.event = function() {
-  $(document).on('submit', '#upload_image_form', window.digiriskdolibarr.digiai.submitForm);
+  $(document).on('change', '#image_file', window.digiriskdolibarr.digiai.submitForm);
 };
 
 /**
@@ -147,6 +147,7 @@ window.digiriskdolibarr.digiai.submitForm = async function(e) {
         actions.append($('<li>').text('- ' + action));
       });
       tr.append($('<td>').append(actions));
+      tr.append($('<button class="wpeo-button">Ajouter</button>'));
       tbody.append(tr);
     });
   } catch (error) {

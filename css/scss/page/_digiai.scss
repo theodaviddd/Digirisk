@@ -1,19 +1,49 @@
-.digiAI-upload {
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
+/* Conteneur pleine largeur sans couleur de fond */
+.digiAI-upload-container-full {
+  width: 100%;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
 }
 
-.digiAI-upload-button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 10px 20px;
+/* Formulaire centré */
+.digiAI-form {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Grande zone de téléversement */
+.digiAI-dropzone {
+  width: 100%;
+  height: 250px;
+  border: 2px dashed #007bff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #007bff;
+  font-size: 18px;
   cursor: pointer;
-  border-radius: 5px;
-  margin-left: 10px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.digiAI-dropzone:hover {
+  border-color: #0056b3;
+  background-color: #f0f8ff;
+}
+
+.digiAI-dropzone i {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.digiAI-dropzone p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.digiAI-input-file {
+  display: none; /* Input invisible, cliquable via la zone */
 }
